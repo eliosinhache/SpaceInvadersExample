@@ -15,7 +15,8 @@ public class BulletMovement : MonoBehaviour
         Debug.LogWarning("colisiona con algo");
         if (col.collider.name!= "Ship")
         {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<ObstacleLife>().ReceiveDamage();
+            //Destroy(col.gameObject);
             Destroy(gameObject);            
         }
     }
